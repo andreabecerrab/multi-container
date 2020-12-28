@@ -16,12 +16,10 @@ after_success:
   - docker build -t andreabecerra/multi-worker ./worker
 
   # log into docker
-  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   # push images
   - docker push multi-client
   - docker push multi-nginx
   - docker push multi-server
   - docker push multi-worker
-
-
