@@ -15,7 +15,7 @@ after_success:
   - docker build -t andreabecerra/multi-worker ./worker
 
   # log into docker
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   # push images
   - docker push multi-client
